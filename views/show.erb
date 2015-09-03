@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<head>
+  <title><%=user_info["name"]%></title>
+</head>
+<body>
+  <h1>TweetReader: Read Tweets Without Ever Going On Twitter!</h1>
+  <form action = "/tweets" method = "get">
+      <strong>Enter a new Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" style="width:1000px; height:20px; font-size:18px;">
+      <input type="submit" value="Search">
+  </form>
+
+<h3><img src="<%=user_info['profile_image_url']%>"><%=user_info["name"]%></h3>
+  <div>
+      <% tweets.each do  |tweet| %>
+        <div>
+            <p><%= tweet["text"] %></p>
+      </div>
+      <% end %>
+  </div>
+
+  <p><a href='/'>Home</a>
+</body>
+</html>
