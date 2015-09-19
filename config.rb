@@ -1,7 +1,4 @@
 require_relative 'keys'
-require 'indico'
-
-pos = []
 
 def get_info(username, query, path)
   consumer_key
@@ -23,7 +20,7 @@ def get_info(username, query, path)
 end
 
 def get_tweets(username)
-  query = URI.encode_www_form("screen_name" => username, "count" => 25)
+  query = URI.encode_www_form("screen_name" => username, "count" => 10)
   path = "/1.1/statuses/user_timeline.json"
   get_info(username, query, path)
 end
