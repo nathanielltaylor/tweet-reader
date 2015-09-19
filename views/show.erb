@@ -10,6 +10,8 @@
   </form>
 
 <h3><img src="<%=user_info['profile_image_url']%>"><%=user_info["name"]%></h3>
+  <p>Positivity outlook: <%= pos_analysis %></p>
+  <p>Political analysis: <%= %></p>
   <div>
       <% tweets.each do  |tweet| %>
         <div>

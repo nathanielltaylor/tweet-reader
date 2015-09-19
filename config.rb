@@ -1,4 +1,7 @@
 require_relative 'keys'
+require 'indico'
+
+pos = []
 
 def get_info(username, query, path)
   consumer_key
