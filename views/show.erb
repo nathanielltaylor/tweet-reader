@@ -1,11 +1,18 @@
 <!DOCTYPE HTML>
 <head>
-  <title><%=user_info["name"]%></title>
+  <title><%=user_info["name"]%>
+    <link rel="stylesheet" href="/views/stylesheets/normalize.css" />
+    <link rel="stylesheet" href="/views/stylesheets/foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%= url("views/stylesheets/styles.css")%>" />
+  </title>
 </head>
 <body>
-  <h1>TweetReader: Read Tweets Without Ever Going On Twitter!</h1>
+  <% if flash[:notice] %>
+      <%= flash[:notice] %>
+  <% end %>
+  <h1>MetaTweetReader: Tonal and Political Analyses of your Favorite Accounts</h1>
   <form action = "/tweets" method = "get">
-      <strong>Enter a new Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" style="width:1000px; height:20px; font-size:18px;">
+      <strong>Enter a new Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
       <input type="submit" value="Search">
   </form>
 

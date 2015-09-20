@@ -1,14 +1,18 @@
 <!DOCTYPE HTML>
 <head>
   <title>TweetReader</title>
+  <link rel="stylesheet" href="stylesheets/normalize.css" />
+  <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+  <link rel="stylesheet" href="stylesheets/styles.css" />
 </head>
 <body>
-  <h1>TweetReader: Read Tweets Without Ever Going On Twitter!</h1>
+  <% if flash[:notice] %>
+      <%= flash[:notice] %>
+  <% end %>
+  <h1>MetaTweetReader: Tonal and Political Analyses of your Favorite Accounts</h1>
   <form action = "/tweets" method = "get">
-      <strong>Search for a Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" style="width:1000px; height:20px; font-size:18px;">
+      <strong>Search for a Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
       <input type="submit" value="Search">
   </form>
-
-  </div>
 </body>
 </html>

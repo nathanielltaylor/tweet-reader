@@ -2,10 +2,13 @@ require 'sinatra'
 require 'oauth'
 require 'json'
 require 'indico'
+require 'sinatra/flash'
 require_relative 'keys'
 require_relative 'config'
 
 Indico.api_key = $INDICO_KEY
+
+enable :sessions
 
 get '/' do
   erb :index
@@ -14,6 +17,10 @@ end
 get '/tweets' do
   username = params[:user_search]
   tweets = get_tweets(username)
+  if tweets == nil
+    flash[:notice] = "Could not access tweets. Either an account of that name does not currently exist or its tweets are protected."
+    redirect '/'
+  end
   user_info = get_user_info(username)
   pos, pol, liberal, con, libertarian, green = Array.new(6) { [] }
   tweets.each do |tweet|
