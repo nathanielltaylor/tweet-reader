@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <head>
   <title><%=user_info["name"]%></title>
-  <link rel="stylesheet" href="/views/stylesheets/normalize.css" />
-  <link rel="stylesheet" href="/views/stylesheets/foundation.min.css" />
-  <link rel="stylesheet" type="text/css" href="<%= url("views/stylesheets/styles.css")%>" />
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <% if flash[:notice] %>
@@ -12,7 +12,7 @@
   <h1>MetaTweetReader: Tonal and Political Analyses of your Favorite Accounts</h1>
   <form action = "/tweets" method = "get">
       <strong>Enter a new Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
-      <input type="submit" value="Search">
+      <input type="submit" value="Search" class="button">
   </form>
 
 <h3><img src="<%=user_info['profile_image_url']%>"><%=user_info["name"]%></h3>
