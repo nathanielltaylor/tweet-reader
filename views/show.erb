@@ -1,30 +1,44 @@
 <!DOCTYPE HTML>
 <head>
   <title><%=user_info["name"]%></title>
-  <link rel="stylesheet" type="text/css" href="normalize.css">
-  <link rel="stylesheet" type="text/css" href="foundation.min.css">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
   <% if flash[:notice] %>
       <%= flash[:notice] %>
   <% end %>
-  <h1>MetaTweetReader: Tonal and Political Analyses of your Favorite Accounts</h1>
-  <form action = "/tweets" method = "get">
-      <strong>Enter a new Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
-      <input type="submit" value="Search" class="button">
-  </form>
+  <h1 class="heading">MetaTweetReader</h1>
+  <h2 class="heading">Tonal and Political Analyses of your Favorite Accounts</h2>
 
-<h3><img src="<%=user_info['profile_image_url']%>"><%=user_info["name"]%></h3>
+
+  <div class="center">
+  <img src="<%=user_info['profile_image_url']%>">
+  <h3><%=user_info["name"]%></h3>
   <p><%= user_info["name"]%>'s recent tweets are <%= pos_analysis %>% positive.</p>
   <p><%= user_info["name"]%>'s recent tweets are <%= liberal_percent %>% liberal, <%= con_percent %>% conservative, <%= libertarian_percent %>% libertarian, and <%= green_percent %>% Green.</p>
-  <div>
+  </div>
+  <br>
+  <div class="tweets">
       <% tweets.each do  |tweet| %>
         <div>
             <p><%= tweet["text"] %></p>
       </div>
       <% end %>
   </div>
+
+  <br>
+  <form action = "/tweets" method = "get" class="center">
+  <div class="row">
+  <div class="large-6 large-centered columns">
+    Enter a new twitter handle:
+    <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
+  </div>
+  </div>
+    <input type="submit" value="Search" class="button">
+  </form>
+  <br>
 
   <p><a href='/'>Home</a>
 </body>
