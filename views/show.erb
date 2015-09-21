@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
 <head>
-  <title><%=user_info["name"]%>
-    <link rel="stylesheet" href="/views/stylesheets/normalize.css" />
-    <link rel="stylesheet" href="/views/stylesheets/foundation.min.css" />
-    <link rel="stylesheet" type="text/css" href="<%= url("views/stylesheets/styles.css")%>" />
-  </title>
+  <title><%=user_info["name"]%></title>
+  <link rel="stylesheet" href="/views/stylesheets/normalize.css" />
+  <link rel="stylesheet" href="/views/stylesheets/foundation.min.css" />
+  <link rel="stylesheet" type="text/css" href="<%= url("views/stylesheets/styles.css")%>" />
 </head>
 <body>
   <% if flash[:notice] %>

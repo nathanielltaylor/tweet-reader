@@ -3,7 +3,7 @@
   <title>TweetReader</title>
   <link rel="stylesheet" href="stylesheets/normalize.css" />
   <link rel="stylesheet" href="stylesheets/foundation.min.css" />
-  <link rel="stylesheet" href="stylesheets/styles.css" />
+  <link rel="stylesheet" type="text/css" href="views/stylesheets/styles.css" />
 </head>
 <body>
   <% if flash[:notice] %>
@@ -11,8 +11,29 @@
   <% end %>
   <h1>MetaTweetReader: Tonal and Political Analyses of your Favorite Accounts</h1>
   <form action = "/tweets" method = "get">
-      <strong>Search for a Twitter handle:</strong>  <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
+      <strong>Search for a Twitter handle:</strong>
+      <input type="text" placeholder="@example OR example OR eXaMpLe" name="user_search" class="search">
       <input type="submit" value="Search">
   </form>
+  <h2>Featured</h2>
+  <h3>Check Out Analyses of the 2016 Presidential Hopefuls</h3>
+  <h4>Democratic</h4>
+  <p><a href="/tweets?user_search=hillaryclinton">Hillary Clinton</a></p>
+  <p><a href="/tweets?user_search=berniesanders">Bernie Sanders</a></p>
+  <p><a href="/tweets?user_search=martinomalley">Martin O'Malley</a></p>
+  <h4>Republican</h4>
+  <p><a href="/tweets?user_search=realdonaldtrump">Donald Trump</a></p>
+  <p><a href="/tweets?user_search=carlyfiorina">Carly Fiorina</a></p>
+  <p><a href="/tweets?user_search=realbencarson">Ben Carson</a></p>
+  <p><a href="/tweets?user_search=marcorubio">Marco Rubio</a></p>
+  <p><a href="/tweets?user_search=jebbush">Jeb Bush</a></p>
+  <p><a href="/tweets?user_search=tedcruz">Ted Cruz</a></p>
+  <p><a href="/tweets?user_search=govmikehuckabee">Mike Huckabee</a></p>
+  <p><a href="/tweets?user_search=randpaul">Rand Paul</a></p>
+  <p><a href="/tweets?user_search=chrischristie">Chris Christie</a></p>
+  <p><a href="/tweets?user_search=johnkasich">John Kasich</a></p>
+  <p><a href="/tweets?user_search=scottwalker">Scott Walker</a></p>
+  <p><a href="/tweets?user_search=lindseygrahamsc">Lindsey Graham</a></p>
+  <p><a href="/tweets?user_search=bobbyjindal">Bobby Jindal</a></p>
 </body>
 </html>
